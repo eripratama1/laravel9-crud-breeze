@@ -21,11 +21,15 @@ class BookRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
+    
+    /**
+     * Set rules validasi yang diperlukan untuk tiap field
+     */
     public function rules()
     {
         return [
-            'name' => ['required','string'],
-            'slug' => ['required','string'],
+            'name' => ['required', 'string'],
+            'author_id' => ['required'],
             'published_year' => ['required']
         ];
     }

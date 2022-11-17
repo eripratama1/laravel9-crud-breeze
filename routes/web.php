@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Setup route middleware untuk route dashboard dan books yang mana untuk
+// mengakses route tersebut harus melakukan autentifikasi terlebih dahulu
 Route::middleware(['auth','verified'])->group(function(){
     Route::get('/dashboard',function(){
         return view('dashboard');
